@@ -1,0 +1,43 @@
+/* estilos.css */
+
+.navbar {
+    background-color: #f1f1f1;
+}
+
+.navbar-brand {
+    color: #000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar-nav {
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-nav li {
+    float: left;
+}
+
+.navbar-nav li a {
+    display: block;
+    color: #000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar-nav li a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.navbar-toggler {
+    background-color: #ddd;
+}
+
+.navbar-toggler:hover {
+    background-color: #ccc;
+}
