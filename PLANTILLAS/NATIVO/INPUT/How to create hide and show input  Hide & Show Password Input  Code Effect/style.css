@@ -1,0 +1,116 @@
+:root {
+  --text-color: #42434d;
+  --first-color: #d8b65c;
+  --body-color: #4a9878;
+  --main-color: #0a191e;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--body-color);
+}
+
+.input{
+  background-color: var(--main-color);
+  display: flex;
+  align-items: center;
+  column-gap: .75rem;
+  position: relative;
+  border-radius: .5rem;
+}
+
+.icon_lock,
+.icon_eye{
+  font-size: 1rem;
+  padding: 1rem;
+  z-index: 1;
+}
+
+.icon_lock,.password{
+  color:var(--first-color);
+  transition: .4s ease-in-out;
+}
+
+.icon_eye{
+  background-color: var(--first-color);
+  color:var(--main-color);
+  display: flex;
+  border-radius: 0 .5rem .5rem 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 3;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.icon_eye::after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top:0;
+  right: -100%;
+  background-color: var(--main-color);
+  z-index: -1;
+  border-radius: 0 .5rem .5rem 0;
+  transition: .3s;
+  transition-delay: .1s;
+}
+
+.password{
+  border: none;
+  outline: none;
+  background: none;
+  z-index: 1;
+  font-size: 14px;
+}
+
+.password::placeholder{
+  color:var(--first-color);
+  transition: 1s;
+}
+
+.overlay{
+  width: 0;
+  height: 100%;
+  right: 0;
+  background-color: var(--first-color);
+  position: absolute;
+  border-radius: .5rem;
+  z-index: 0;
+  transition: .4s ease-in-out;
+}
+
+.overlay-content{
+  width: 100%;
+  height: 100%;
+  border-radius: .5rem;
+  right:0;
+}
+
+.overlay-content ~ .icon_eye{
+  color:var(--first-color);
+}
+
+.overlay-content ~ .icon_eye::after{
+  right: 0;
+}
+
+.overlay-content ~ .icon_lock{
+  color:var(--main-color);
+  transition: .4s;
+}
+
+.overlay-content ~ .password,
+.overlay-content ~ .password::placeholder{
+  color:var(--text-color)
+}
