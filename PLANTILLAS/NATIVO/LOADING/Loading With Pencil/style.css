@@ -1,0 +1,132 @@
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+    color:#fff;
+    background-color: #002240;
+    font-size: 1.5rem;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.pencil{
+    position: relative;
+    width: 150px;
+    height: 20px;
+    transform-origin: center;
+    transform: rotate(310deg);
+    animation:pencil-animation 10s infinite
+}
+
+@keyframes pencil-animation{
+    0%{
+        transform: rotate(135deg);
+    }
+    20%{
+        transform: rotate(315deg);
+    }
+    45%{
+        transform: translateX(300px) rotate(315deg);
+    }
+    55%{
+        transform: translateX(300px) rotate(495deg);
+    }
+    100%{
+        transform: rotate(495deg);
+    }
+}
+
+.pencil-pointer{
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background-color: cyan;
+    top:50%;
+    left: 0;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.pencil-cap{
+    position: absolute;
+    width: 12%;
+    height: 100%;
+    background-color:#fde394;
+    left:0%;
+    top:50%;
+    transform: translateY(-50%);
+    clip-path:polygon(20% 40%,100% 0,100% 100%, 20% 60%)
+}
+
+.pencil-cap-base{
+    position: absolute;
+    background-color: #f9d47c;
+    width: 4%;
+    height: 100%;
+    top:0;
+    left:12%
+}
+
+.pencil-middle{
+    position: absolute;
+    background-color: cyan;
+    width: 74%;
+    height: 100%;
+    top:0;
+    left:calc(4% + 12%)
+}
+
+.pencil-eraser{
+    position: absolute;
+    background-color: #f1f1f1;
+    width: 10%;
+    height: 100%;
+    top:0;
+    left:calc(4% + 12% + 74%);
+    border-radius: 0px 4px 4px 0;
+
+}
+
+.line{
+    position: relative;
+    background-color: cyan;
+    width: 1000px;
+    height: 5px;
+    top:42px;
+    right:50px;
+    transform: scaleX(0);
+    transform-origin: center;
+    z-index: -1;
+    border-radius: 50px;    
+    animation: line-animation 10s infinite;
+}
+
+@keyframes line-animation{
+    20%{
+        transform: scaleX(0);
+    }
+    45%{
+        transform: scaleX(0.6);
+    }
+    55%{
+        transform: scaleX(0.6);
+    }
+    100%{
+        transform: scaleX(0);
+    }
+}
+
+h2{
+    position: relative;
+    top:50px;
+}
