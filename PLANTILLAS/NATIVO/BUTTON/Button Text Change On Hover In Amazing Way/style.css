@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.main-div {
+  min-height: 100vh;
+  width: 100%;
+  background: #060822;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  width: 160px;
+  letter-spacing: 0.1em;
+  padding: 0px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 45px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: #ffca21;
+  color:#fff;
+  border:none;
+  border-radius: 5px;
+  
+}
+.btn:hover {
+  text-decoration: none;
+}
+
+
+.btn-effect {
+  --uismLinkDisplay: var(--smLinkDisplay, inline-flex);
+  display: var(--uismLinkDisplay);
+  color: #fff;
+  position: relative;
+  transition-duration: 0.4s;
+  overflow: hidden;
+}
+
+.btn-effect::before,
+.btn-effect span {
+  margin: 0 auto;
+  transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+  transition-duration: 0.4s;
+}
+
+.btn-effect:hover {
+  background-color: rgb(85, 41, 220);
+}
+
+.btn-effect:hover span {
+  -webkit-transform: translateY(-400%) scale(-0.1, 20);
+  transform: translateY(-400%) scale(-0.1, 20);
+}
+
+.btn-effect::before {
+  content: attr(data-sm-link-text);
+  color: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  -webkit-transform: translateY(500%) scale(-0.1, 20);
+  transform: translateY(500%) scale(-0.1, 20);
+}
+
+.btn-effect:hover::before {
+  letter-spacing: 0.05em;
+  -webkit-transform: translateY(0) scale(1, 1);
+  transform: translateY(0) scale(1, 1);
+}
