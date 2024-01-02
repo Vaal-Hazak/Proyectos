@@ -1,0 +1,75 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image:url(bricks.jpg);
+    background-size:100% 100%;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background:radial-gradient(rgba(1,2,87,.9),#000)
+}
+
+.neon-btn{
+    position: relative;
+    font-size: 3rem;
+    background-color: transparent;
+    color:#e8f201;
+    border: .1em solid #e8f201;
+    padding: .25em 1em;
+    border-radius: .2em;
+    cursor: pointer;
+    font-weight: bold;
+    text-shadow: 0 0 .2em rgba(255,255,255,.35), 0 0 1em #e8f201;
+    box-shadow: inset 0 0 .4em 0 #e8f201, 0 0 .6rem 0 #e8f201;;
+    transition: all .3s ease;
+}
+
+.neon-btn::before{
+    content: "";
+    position: absolute;
+    background: linear-gradient(90deg, #e8f201,violet 50%, #e8f201 100%);
+    top:110%;
+    left:0;
+    width: 100%;
+    height: 100%;
+    transform: perspective(1em) rotateX(45deg) scale(1.1,.3);
+    filter:blur(1em);
+    opacity: 0.7;
+    transition: all .3s ease-in;
+}
+
+.neon-btn::after{
+    content: "";
+    position: absolute;
+    background-color: #e8f201;
+    top:0;
+    left:0;
+    right:0;
+    bottom: 0;
+    z-index: -1;
+    opacity: 0;
+    box-shadow: 0 0 2em .5em #e8f201;
+
+}
+
+.neon-btn:hover{
+    background-color:   #e8f201 ;
+    color: rgba(1,2,87);
+    box-shadow: inset 0 0 .4em 0 #e8f201, 0 0 1rem 0 #e8f201;
+}
+
+.neon-btn:hover::before{
+    opacity: 1;
+}
+
+.neon-btn:hover::after{
+    opacity: 1;
+}
